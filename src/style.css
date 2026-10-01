@@ -244,3 +244,168 @@ h1 {
     min-height: 44vh;
   }
 }
+
+/* —— 文稿台扩展样式 —— */
+.doc-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 4px 0 12px;
+  flex-wrap: wrap;
+}
+
+.doc-tab {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-size: 0.86rem;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.doc-tab.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+  font-weight: 700;
+}
+
+.panel {
+  min-height: 72vh;
+}
+
+.editor,
+.preview {
+  min-height: 64vh;
+}
+
+.editor {
+  overflow: auto;
+}
+
+/* 折叠代码 */
+.code-block {
+  position: relative;
+}
+
+.fold-toggle {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.12);
+  color: #d8f0e5;
+  border-radius: 8px;
+  padding: 2px 8px;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+
+.preview pre.collapsed {
+  max-height: 56px;
+  overflow: hidden;
+}
+
+.preview img {
+  max-width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  display: block;
+  margin: 0.6em 0;
+  background:
+    repeating-linear-gradient(45deg, #f2f6f4, #f2f6f4 8px, #eaf1ed 8px, #eaf1ed 16px);
+  min-height: 48px;
+}
+
+.preview .table-wrap {
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+.preview table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.92em;
+}
+
+.preview th,
+.preview td {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+}
+
+.preview thead th {
+  background: #f0f6f2;
+}
+
+.src-block {
+  scroll-margin-top: 8px;
+}
+
+/* textarea 镜像（隐藏，仅用于测量） */
+.editor-mirror {
+  top: -9999px !important;
+  left: -9999px !important;
+  z-index: -1;
+}
+
+.editor-mirror .ln {
+  display: block;
+}
+
+/* 状态栏 */
+.statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+  font-size: 0.82rem;
+  color: var(--muted);
+  flex-wrap: wrap;
+}
+
+.status-text {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.debug {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.debug select {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px 6px;
+  font-size: 0.82rem;
+}
+
+.stat {
+  font-variant-numeric: tabular-nums;
+}
+
+.mode-pill {
+  font-weight: 700;
+}
+
+.mode-pill.degraded {
+  color: #a06a00;
+  background: #fff4dd;
+  border-color: #ecd9a8;
+}
+
+.stats .locked {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
