@@ -244,3 +244,251 @@ h1 {
     min-height: 44vh;
   }
 }
+
+/* Position synchronization workspace */
+.toolbar,
+.statusbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.toolbar {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 8px 24px rgba(9, 36, 21, 0.07);
+}
+
+.document-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.document-select select,
+.ghost-btn {
+  min-height: 34px;
+}
+
+.document-select select {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 4px 8px;
+  color: var(--ink);
+  background: #fff;
+}
+
+.ghost-btn.primary {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.statusbar {
+  min-height: 34px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #f6faf8;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.statusbar strong {
+  color: var(--ink);
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #9aa8a1;
+}
+
+.status-dot.locked {
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.warning {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.panel {
+  height: 72vh;
+  min-height: 520px;
+}
+
+.panel-header {
+  flex: 0 0 auto;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.editor-stack {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.editor,
+.source-mirror {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  border: 0;
+  padding: 16px;
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: normal;
+  font-family: "JetBrains Mono", "SFMono-Regular", "Courier New", monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  tab-size: 2;
+  scrollbar-gutter: stable;
+}
+
+.editor {
+  z-index: 1;
+  resize: none;
+  outline: 0;
+  color: var(--ink);
+  background: linear-gradient(180deg, #ffffff, #fbfcfc);
+}
+
+.source-mirror {
+  z-index: 0;
+  visibility: hidden;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.source-line {
+  display: block;
+  min-height: calc(15px * 1.7);
+}
+
+.preview {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+}
+
+.document-page {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 760px;
+  min-height: 720px;
+  margin: 0 auto 18px;
+  padding: 28px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 7px 22px rgba(9, 36, 21, 0.08);
+  overflow: hidden;
+}
+
+.page-gap {
+  height: 18px;
+}
+
+.layout-node[data-source-id] {
+  scroll-margin-block: 20vh;
+}
+
+.continuation-note {
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.table-node table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.9rem;
+}
+
+.table-node th,
+.table-node td {
+  border: 1px solid #cbd8d1;
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+  word-break: break-word;
+}
+
+.table-node th {
+  background: #edf4ef;
+}
+
+.code-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: -2px 0 8px;
+  color: #c9d8d0;
+  font-size: 0.8rem;
+}
+
+.fold-button {
+  border: 1px solid #496457;
+  border-radius: 8px;
+  padding: 2px 8px;
+  color: #e6fff2;
+  background: #1c382c;
+  cursor: pointer;
+}
+
+.code-node.collapsed pre {
+  display: none;
+}
+
+.doc-image {
+  display: block;
+  max-width: 100%;
+  min-height: 80px;
+  margin: 8px 0 14px;
+  border-radius: 10px;
+  background: #edf4ef;
+}
+
+.doc-image.broken-image {
+  padding: 12px;
+  object-fit: contain;
+  border: 1px dashed var(--danger);
+}
+
+:root.alternate-font,
+:root.alternate-font .editor,
+:root.alternate-font .source-mirror {
+  font-family: Georgia, "Songti SC", "SimSun", serif;
+}
+
+:root.alternate-font .preview {
+  font-family: Georgia, "Songti SC", "SimSun", serif;
+}
+
+@media (max-width: 900px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    height: 62vh;
+  }
+}

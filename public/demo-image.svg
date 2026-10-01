@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="180" viewBox="0 0 720 180" role="img" aria-label="懒加载示例图片">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#d8f0e5"/>
+      <stop offset="1" stop-color="#9ccfba"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="180" rx="18" fill="url(#g)"/>
+  <circle cx="120" cy="86" r="38" fill="#146c43" opacity="0.22"/>
+  <path d="M74 142l82-64 78 64H74z" fill="#146c43" opacity="0.28"/>
+  <text x="205" y="88" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#143b2c">懒加载图片完成后重定位</text>
+  <text x="205" y="126" font-family="Arial, sans-serif" font-size="18" fill="#315646">load / error 都会触发真实 DOM 再测量</text>
+</svg>
